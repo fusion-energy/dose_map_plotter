@@ -4,7 +4,7 @@
 
 import matplotlib.pyplot as plt
 import openmc
-from matplotlib import cm
+import matplotlib
 from matplotlib.colors import LogNorm
 
 from openmc_regular_mesh_plotter import plot_mesh_tally
@@ -171,9 +171,7 @@ with openmc.StatePoint(statepoint_filename) as statepoint:
     my_mesh_tally_result = statepoint.get_tally(name="mesh_tally")
 
 # makes a discrete color map from a Perceptually Uniform Sequential colormap
-cmap = cm.get_cmap(
-    "viridis", 11
-)  # gets 10 discrete colors as we have 10 ticks on the colorbar this should match up
+cmap = matplotlib.pyplot.get_cmap(name="viridis", lut=11)
 
 plot = plot_mesh_tally(
     tally=my_mesh_tally_result,
