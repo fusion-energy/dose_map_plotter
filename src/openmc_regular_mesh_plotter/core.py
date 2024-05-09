@@ -1,6 +1,5 @@
 import math
 import typing
-import warnings
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -183,7 +182,7 @@ def plot_mesh_tally(
         fig.colorbar(im, **colorbar_kwargs)
 
     if outline and geometry is None:
-        warnings.warn('output has been set to True but the geometry has not been set. When setting outline to True please also provide the geometry. Plotting without the outline.')
+        raise ValueError('When calling plot_mesh_tally with outline=True the geometry should also be provided. Either set outline to False or set the geometry to and openmc.Geometry object')
     if outline and geometry is not None:
         import matplotlib.image as mpimg
 
