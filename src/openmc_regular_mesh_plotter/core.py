@@ -183,7 +183,9 @@ def plot_mesh_tally(
         fig.colorbar(im, **colorbar_kwargs)
 
     if outline and geometry is None:
-        warnings.warn('output has been set to True but the geometry has not been set. When setting outline to True please also provide the geometry. Plotting without the outline.')
+        warnings.warn(
+            "output has been set to True but the geometry has not been set. When setting outline to True please also provide the geometry. Plotting without the outline."
+        )
     if outline and geometry is not None:
         import matplotlib.image as mpimg
 
