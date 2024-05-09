@@ -1,13 +1,12 @@
 import math
+import typing
 from pathlib import Path
 from tempfile import TemporaryDirectory
-import typing
-import openmc
+
+import matplotlib.pyplot as plt
 import numpy as np
 import openmc
 import openmc.checkvalue as cv
-import matplotlib.pyplot as plt
-
 from packaging import version
 
 if version.parse(openmc.__version__) < version.parse("0.13.3"):
@@ -182,6 +181,13 @@ def plot_mesh_tally(
     if colorbar:
         fig.colorbar(im, **colorbar_kwargs)
 
+    if outline and geometry is None:
+        msg = (
+            "When calling plot_mesh_tally with outline=True the geometry "
+            "should also be provided. Either set outline to False or set "
+            "the geometry to and openmc.Geometry object"
+        )
+        raise ValueError(msg)
     if outline and geometry is not None:
         import matplotlib.image as mpimg
 

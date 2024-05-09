@@ -1,7 +1,7 @@
 import openmc
 from matplotlib.colors import LogNorm
-from openmc_regular_mesh_plotter import plot_mesh_tally
 
+from openmc_regular_mesh_plotter import plot_mesh_tally
 
 # MATERIALS
 mat_1 = openmc.Material()
