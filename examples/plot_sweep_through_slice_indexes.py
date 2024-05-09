@@ -2,12 +2,13 @@
 # It is also set up to accept any geometry and the mesh tally will adapt to the geometry dimensions
 
 
-import openmc
-import numpy as np
-from matplotlib.colors import LogNorm
-from openmc_regular_mesh_plotter import plot_mesh_tally
-from matplotlib import cm
 import matplotlib
+import numpy as np
+import openmc
+from matplotlib import cm
+from matplotlib.colors import LogNorm
+
+from openmc_regular_mesh_plotter import plot_mesh_tally
 
 # sets the font for the axis
 matplotlib.rc("font", **{"family": "normal", "size": 22})

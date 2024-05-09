@@ -1,7 +1,8 @@
 import openmc
-from matplotlib.colors import LogNorm
-from openmc_regular_mesh_plotter import plot_mesh_tally
 import pytest
+from matplotlib.colors import LogNorm
+
+from openmc_regular_mesh_plotter import plot_mesh_tally
 
 
 @pytest.fixture()

@@ -2,12 +2,12 @@
 # It is also set up to accept any geometry and the mesh tally will adapt to the geometry dimensions
 
 
-import openmc
-from matplotlib.colors import LogNorm
-from openmc_regular_mesh_plotter import plot_mesh_tally
-from matplotlib import cm
 import matplotlib.pyplot as plt
+import openmc
+from matplotlib import cm
+from matplotlib.colors import LogNorm
 
+from openmc_regular_mesh_plotter import plot_mesh_tally
 
 # materials
 mat_concrete = openmc.Material()
