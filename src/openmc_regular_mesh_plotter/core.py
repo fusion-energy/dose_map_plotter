@@ -182,7 +182,12 @@ def plot_mesh_tally(
         fig.colorbar(im, **colorbar_kwargs)
 
     if outline and geometry is None:
-        raise ValueError('When calling plot_mesh_tally with outline=True the geometry should also be provided. Either set outline to False or set the geometry to and openmc.Geometry object')
+        msg = (
+            "When calling plot_mesh_tally with outline=True the geometry "
+            "should also be provided. Either set outline to False or set "
+            "the geometry to and openmc.Geometry object"
+        )
+        raise ValueError(msg)
     if outline and geometry is not None:
         import matplotlib.image as mpimg
 
